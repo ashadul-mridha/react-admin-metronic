@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const Aside = () => {
     return (
@@ -7,9 +8,9 @@ const Aside = () => {
 					{/* <!--begin::Brand--> */}
 					<div className="aside-logo flex-column-auto" id="kt_aside_logo">
 						{/* <!--begin::Logo--> */}
-						<a href="../../demo1/dist/index.html">
-							<img alt="Logo" src="assets/media/logos/logo-1-dark.svg" className="h-25px logo" />
-						</a>
+						<Link to="/">
+							<img alt="Logo" src="/assets/media/logos/logo-1-dark.svg" className="h-25px logo" />
+						</Link>
 						{/* <!--end::Logo--> */}
 						{/* <!--begin::Aside toggler--> */}
 						<div id="kt_aside_toggle" className="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
@@ -64,6 +65,100 @@ const Aside = () => {
 										<span className="menu-section text-muted text-uppercase fs-8 ls-1">Crafted</span>
 									</div>
 								</div>
+								
+								<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+									<span className="menu-link">
+										<span className="menu-icon">
+											<span className="svg-icon svg-icon-2">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z" fill="black" />
+													<path d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z" fill="black" />
+													<path opacity="0.3" d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z" fill="black" />
+												</svg>
+											</span>
+										</span>
+										<span className="menu-title">বই</span>
+										<span className="menu-arrow"></span>
+									</span>
+									<div className="menu-sub menu-sub-accordion menu-active-bg">
+										<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+											<span className="menu-link">
+												<span className="menu-bullet">
+													<span className="bullet bullet-dot"></span>
+												</span>
+												<span className="menu-title">নতুন সংযুক্ত</span>
+												
+											</span>
+										</div>
+										<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+											<span className="menu-link">
+												<span className="menu-bullet">
+													<span className="bullet bullet-dot"></span>
+												</span>
+												<span className="menu-title">লিস্ট</span>
+											
+											</span>
+										</div>
+									</div>
+								</div>
+
+								
+								<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+									<span className="menu-link">
+										<span className="menu-icon">
+											{/* <!--begin::Svg Icon | path: icons/duotune/ecommerce/ecm007.svg--> */}
+											<span className="svg-icon svg-icon-2">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z" fill="black" />
+													<path d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z" fill="black" />
+													<path opacity="0.3" d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z" fill="black" />
+												</svg>
+											</span>
+											{/* <!--end::Svg Icon--> */}
+										</span>
+										<span className="menu-title">বই ইস্যু</span>
+										
+									</span>
+								</div>
+
+								
+								
+								<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+									<span className="menu-link">
+										<span className="menu-icon">
+											<span className="svg-icon svg-icon-2">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+													<path d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z" fill="black" />
+													<path d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z" fill="black" />
+													<path opacity="0.3" d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z" fill="black" />
+												</svg>
+											</span>
+										</span>
+										<span className="menu-title">তদন্ত</span>
+										<span className="menu-arrow"></span>
+									</span>
+									<div className="menu-sub menu-sub-accordion menu-active-bg">
+										<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+											<NavLink to='/investigation/add' className={ (navInfo)=> navInfo.isActive ? "menu-link active-site-nav" : "menu-link" }>
+												<span className="menu-bullet">
+													<span className="bullet bullet-dot"></span>
+												</span>
+												<span className="menu-title">নতুন সংযুক্ত</span>
+												
+											</NavLink>
+										</div>
+										<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
+											<NavLink to="/investigation/list" className={ (navInfo)=> navInfo.isActive ? "menu-link active-site-nav" : "menu-link" }>
+												<span className="menu-bullet">
+													<span className="bullet bullet-dot"></span>
+												</span>
+												<span className="menu-title">লিস্ট</span>
+											
+											</NavLink>
+										</div>
+									</div>
+								</div>
+								
 								<div data-kt-menu-trigger="click" className="menu-item menu-accordion">
 									<span className="menu-link">
 										<span className="menu-icon">
