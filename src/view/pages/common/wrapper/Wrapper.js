@@ -1,7 +1,10 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
 
 const Wrapper = () => {
+    const {user , logOut} = useAuth();
+    // console.log(user,'user');
     return (
         <>
             {/*begin::Wrapper*/}
@@ -31,8 +34,8 @@ const Wrapper = () => {
                         {/*end::Aside mobile toggle*/}
                         {/*begin::Mobile logo*/}
                         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                            <a href="../../demo1/dist/index.html" class="d-lg-none">
-                                <img alt="Logo" src="assets/media/logos/logo-2.svg" class="h-30px" />
+                            <a href="#" class="d-lg-none">
+                                <img alt="Logo" src="/assets/media/logos/logo-2.svg" class="h-30px" />
                             </a>
                         </div>
                         {/*end::Mobile logo*/}
@@ -71,35 +74,50 @@ const Wrapper = () => {
                                     {/*begin::Menu wrapper*/}
                                     <div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click"
                                         data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                                        <img src="assets/media/avatars/300-1.jpg" alt="user" />
+                                            {user.email ? <h6>{user.email}</h6> : <h6></h6>}                                            
+                                        {/* <img src="/assets/media/avatars/300-1.jpg" alt="user" /> */}
                                     </div>
                                     {/*begin::User account menu*/}
                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px"
-                                        data-kt-menu="true">
-                                        {/*begin::Menu item*/}
-                                        <div class="menu-item px-3">
-                                            <div class="menu-content d-flex align-items-center px-3">
-                                                {/*begin::Avatar*/}
-                                                <div class="symbol symbol-50px me-5">
-                                                    <img alt="Logo" src="assets/media/avatars/300-1.jpg" />
-                                                </div>
-                                                {/*end::Avatar*/}
-                                                {/*begin::Username*/}
-                                                <div class="d-flex flex-column">
-                                                    <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-                                                        <span
-                                                            class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
+                                            data-kt-menu="true">
+                                            {/*begin::Menu item*/}
+                                                <div class="menu-item px-3">
+                                                    <div class="menu-content d-flex align-items-center px-3">
+                                                        {/*begin::Avatar*/}
+                                                        <div class="symbol symbol-50px me-5">
+                                                            {/* <img alt="Logo" src="/assets/media/avatars/300-1.jpg" /> */}
+                                                        </div>
+                                                        {/*end::Avatar*/}
+                                                        {/*begin::Username*/}
+                                                        <div class="d-flex flex-column">
+                                                            <div class="fw-bolder d-flex align-items-center fs-5">{user.displayName && user.displayName }
+                                                                {/* <span
+                                                                    class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span> */}
+                                                            </div>
+                                                            <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{user.email && user.email }</a>
+                                                        </div>
+                                                        {/*end::Username*/}
                                                     </div>
-                                                    <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
                                                 </div>
-                                                {/*end::Username*/}
-                                            </div>
+                                                {/*end::Menu item*/}
+                                                {/*begin::Menu separator*/}
+                                                <div class="separator my-2"></div>
+                                                {/*end::Menu separator*/} 
+                                                {/*begin::Menu item*/}
+                                                <div class="menu-item px-3">
+                                                    <div class="menu-content d-flex align-items-center justify-content-center px-3">
+                                                        
+                                                        {/*end::Avatar*/}
+                                                        {/*begin::Username*/}
+                                                        <div class="d-flex flex-column">
+                                                            <button onClick={logOut} className="btn btn-primary btn-sm">Logout</button>
+                                                        </div>
+                                                        {/*end::Username*/}
+                                                    </div>
+                                                </div>
+                                                {/*end::Menu item*/}                           
                                         </div>
-                                        {/*end::Menu item*/}
-                                        {/*begin::Menu separator*/}
-                                        <div class="separator my-2"></div>
-                                        {/*end::Menu separator*/}                            
-                                    </div>
+                                    
                                     {/*end::User account menu*/}
                                     {/*end::Menu wrapper*/}
                                 </div>
@@ -140,15 +158,33 @@ const Wrapper = () => {
                 {/*end::Content*/}
                 {/*begin::Footer*/}
                 <div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-12 text-dark text-center">
+                                <span class="text-muted fw-bold me-1">2022©</span>
+                                <a href="#" target="_blank" class="text-gray-800 text-hover-primary">Ashadul</a>
+                            </div>
+                            {/* <div className="col-6">
+                                <ul class="menu menu-gray-600 menu-hover-primary fw-bold">
+                                    <li class="menu-item">
+                                        <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
+                                    </li>
+                                </ul>
+                            </div> */}
+                        </div>
+                    </div>
                     {/*begin::Container*/}
-                    <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-                        {/*begin::Copyright*/}
+                    {/* <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                         <div class="text-dark order-2 order-md-1">
                             <span class="text-muted fw-bold me-1">2022©</span>
                             <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
                         </div>
-                        {/*end::Copyright*/}
-                        {/*begin::Menu*/}
                         <ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
                             <li class="menu-item">
                                 <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
@@ -160,9 +196,7 @@ const Wrapper = () => {
                                 <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
                             </li>
                         </ul>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::Container*/}
+                    </div> */}
                 </div>
                 {/*end::Footer*/}
             </div>
